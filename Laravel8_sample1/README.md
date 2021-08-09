@@ -14,5 +14,52 @@ We need to setup a local environment with:
 - Ex. in my case http://laravel8.test
 - Fill the .env proper data
 
-## Terminal snippets
-- Crear controlador: php artisan make:controller NameController
+
+## Snippets
+Check the terminal snippets list
+### Terminal general snippets
+- Crear controlador:
+    - php artisan make:controller NameController
+### Terminal migrations snippets
+- Crear migracion:
+    - php artisan make:migration create_name_table
+- Actualizar migraciones existentes (No usar en prod, drop all):
+    - php artisan migrate:fresh
+- Actualizar migraciones existentes usando "down" (No usar en prod, drop each):
+    - php artisan migrate:refresh
+- Actualizar solo campo en tabla:
+    - php artisan make:migration add_name_to_users_table
+- Ejecutar las migraciones exitentes (up):
+    - php artisan migrate
+- Eliminar la ultima migracion (lote/batch) ejecutada (down):
+    - php artisan migrate:rollback
+- Modify table structure (Needs doctrine/dbal library):
+    - php artisan make:migration change_to_name_table
+- Delete all tables (only keep migrations table):
+    - php artisan migrate:reset
+### Terminal Models/ORM snippets
+- Create new model (Singular, automatically undestands the plural, only works automatically on English)
+    - php artisan make:model Name
+
+## ORM Eloquent
+Eloquent manages all database injection/consulting by using objects.
+### Tinker
+To "emulate" via terminal the ORM Eloquent objects, methods, etc
+- php artisan tinker
+Select the Model you're going to work
+- use App\Models\Name;
+Initialize new object and fill it:
+- $name = new Name;
+- $name->name="Laravel";
+- $name->description="Best FW ever!";
+Show current object state:
+- $name;
+Save new register:
+- $name->save();
+Show object already saved:
+- $name;
+## Seeders
+Fill the database with demo data
+- seeders/DatabaseSeeder.php
+Execute:
+- php artisan db:seed
