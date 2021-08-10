@@ -60,6 +60,13 @@ Show object already saved:
 - $name;
 ## Seeders
 Fill the database with demo data
-- seeders/DatabaseSeeder.php
-Execute:
-- php artisan db:seed
+- General Seeder:
+    - seeders/DatabaseSeeder.php
+- Execute general seeder (Try to run before the command "fresh"):
+    - php artisan db:seed
+    - php artisan migrate:fresh --seed
+- Create custom Seeders:
+    - php artisan make:seeder NameSeeder
+- Execute custom seeders (Try to run before the command "fresh"):
+    - Call them into the DatabaseSeeder.php file
+    - php artisan migrate:fresh --seed
