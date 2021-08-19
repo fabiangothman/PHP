@@ -14,10 +14,13 @@ class CursoSeeder extends Seeder
      */
     public function run()
     {
-        $curso = new Curso();
+        /*$curso = new Curso();
         $curso->name = "Laravel";
         $curso->description = "El mejor FW!";
         $curso->categoria = "Desarrollo web";
-        $curso->save();
+        $curso->save();*/
+
+        //Create 5 random registeres in DB
+        Curso::factory(5)->create();
     }
 }

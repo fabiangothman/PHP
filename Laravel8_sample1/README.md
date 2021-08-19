@@ -70,3 +70,10 @@ Fill the database with demo data
 - Execute custom seeders (Try to run before the command "fresh"):
     - Call them into the DatabaseSeeder.php file
     - php artisan migrate:fresh --seed
+## Factory
+Fill the database with demo data
+- Create custom Factory:
+    - php artisan make:factory NameFactory
+    - php artisan make:factory NameFactory --model=Curso
+- Execute general seeder (Try to run before the command "fresh"):
+    - php artisan migrate:fresh --seed
