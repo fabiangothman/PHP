@@ -9,7 +9,7 @@
         <div class="m-5">
             <ul>
                 @foreach ($cursos as $curso)
-                    <li>- <a class="h-5 text-blue-400" href="{{route('cursos.show', $curso->id)}}">{{ $curso->name }}</a></li>
+                    <li>- <a class="h-5 text-blue-400" href="{{route('cursos.show', $curso)}}">{{ $curso->name }}</a></li>
                 @endforeach
             </ul>
         </div>

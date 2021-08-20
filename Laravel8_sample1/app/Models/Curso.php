@@ -11,4 +11,13 @@ class Curso extends Model
     protected $table = "cursos";
     protected $fillable = ['name', 'description', 'categoria']; //Guarda en el Modelo Curso solo estos campos
     protected $guarded = [];    //Guarda en el Modelo Curso los campos excepto estos campos
+
+    /**
+     * Se esta sobre-escribiendo este metodo de Model, para cambiar el key de busqueda por el SLUG y no por el ID
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 }

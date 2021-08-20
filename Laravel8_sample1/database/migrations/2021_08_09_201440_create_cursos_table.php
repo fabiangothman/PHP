@@ -18,6 +18,7 @@ class CreateCursosTable extends Migration
             $table->string('name', 100);
             $table->text('description');
             $table->text('categoria');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
