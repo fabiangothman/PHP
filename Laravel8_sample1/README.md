@@ -58,6 +58,21 @@ Save new register:
 - $name->save();
 Show object already saved:
 - $name;
+### General samples query
+Returns a "Collection", "Builder" or "Object":
+    - $cursos = Curso::all();
+    - $cursosFiltered = Curso::where('categoria', 'Desarrollo web')->get();
+    - $cursosFilteredOrdered = Curso::where('categoria', 'Desarrollo web')->orderBy('name', 'desc')->get();
+    - $cursoObj = Curso::where('categoria', 'Desarrollo web')->orderBy('name', 'desc')->first();
+    - $cursoObjCustom = Curso::select('name AS title', 'description AS desc')->get();
+    - $cursoObjCustomObj = Curso::select('name', 'description')->where('categoria', 'Desarrollo web')->orderBy('name', 'desc')->first();
+    - $cursosThree = Curso::select('name', 'description')->where('categoria', 'Desarrollo web')->orderBy('name', 'desc')->take(2)->get();
+    - $cursosEqualTo = Curso::where('name', 'Magnam eum consequatur ratione earum error.')->get();
+    - $cursoEqualTo = Curso::where('id', 5)->first();
+    - $cursoFindById = Curso::find(5);
+    - $cursosMajor = Curso::where('id', '>=', 5)->get();
+    - $cursosDiff = Curso::where('id', '<>', 2)->get();
+    - $cursosLike = Curso::where('name', 'like', '% odit %')->get();
 ## Seeders
 Fill the database with demo data
 - General Seeder:

@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         //$this->call(CursoSeeder::class);
 
-        //Create 7 random registeres in DB
-        Curso::factory(7)->create();
+        //Create 40 random registeres in DB
+        Curso::factory(40)->create();
     }
 }
