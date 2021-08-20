@@ -40,6 +40,9 @@ Check the terminal snippets list
 ### Terminal Models/ORM snippets
 - Create new model (Singular, automatically undestands the plural, only works automatically on English)
     - php artisan make:model Name
+### Terminal routes
+- List of current routes:
+    - php artisan r:l
 
 ## ORM Eloquent
 Eloquent manages all database injection/consulting by using objects.
