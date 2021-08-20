@@ -15,7 +15,7 @@ We need to setup a local environment with:
 - Fill the .env proper data
 
 
-## Snippets
+## Artisan snippets
 Check the terminal snippets list
 ### Terminal general snippets
 - Crear controlador:
@@ -73,7 +73,7 @@ Returns a "Collection", "Builder" or "Object":
 - $cursosMajor = Curso::where('id', '>=', 5)->get();
 - $cursosDiff = Curso::where('id', '<>', 2)->get();
 - $cursosLike = Curso::where('name', 'like', '% odit %')->get();
-## Seeders
+### Seeders
 Fill the database with demo data
 - General Seeder:
     - seeders/DatabaseSeeder.php
@@ -85,10 +85,15 @@ Fill the database with demo data
 - Execute custom seeders (Try to run before the command "fresh"):
     - Call them into the DatabaseSeeder.php file
     - php artisan migrate:fresh --seed
-## Factory
+### Factory
 Fill the database with demo data
 - Create custom Factory:
     - php artisan make:factory NameFactory
     - php artisan make:factory NameFactory --model=Curso
 - Execute general seeder (Try to run before the command "fresh"):
     - php artisan migrate:fresh --seed
+
+## Form request (For validate forms)
+Create file to validate a form:
+- php artisan make:request Action&Name
+- php artisan make:request StoreCurso
