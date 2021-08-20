@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +51,10 @@ Route::resource('cursos', CursoController::class);
 //Route::resource('materias', CursoController::class)->parameters(['materias' => 'curso'])->names('cursos');
 
 Route::view('nosotros', 'us')->name('nosotros');
+
+Route::get('contactanos', function () {
+    $correo = new ContactanosMailable;
+    Mail::to('fabianmurillo.01@gmail.com')->send($correo);
+
+    return "Mensaje enviado";
+});

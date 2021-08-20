@@ -43,6 +43,9 @@ Check the terminal snippets list
 ### Terminal routes
 - List of current routes:
     - php artisan r:l
+### terminal cache
+- Clear cache:
+    - php artisan cache:clear
 
 ## ORM Eloquent
 Eloquent manages all database injection/consulting by using objects.
@@ -100,3 +103,7 @@ Fill the database with demo data
 Create file to validate a form:
 - php artisan make:request Action&Name
 - php artisan make:request StoreCurso
+
+## Email
+Create a file to control email requests:
+- php artisan make:mail NameMailable
