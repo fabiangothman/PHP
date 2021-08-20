@@ -46,6 +46,10 @@ Check the terminal snippets list
 ### terminal cache
 - Clear cache:
     - php artisan cache:clear
+### terminal componets (Tailwind)
+- Create new component (creates two files for component: controller&view):
+    - php artisan make:component Name
+    - p.e. <x-alert />
 
 ## ORM Eloquent
 Eloquent manages all database injection/consulting by using objects.
