@@ -13,15 +13,24 @@
                 
                 <div class="my-px">
                     <label for="name">Nombre:</label><br />
-                    <input type="text" name="name" class="border border-black" value="{{$curso->name}}" />
+                    <input type="text" name="name" class="border border-black" value="{{old('name', $curso->name)}}" />
+                    @error('name')
+                        <small class="text-red-400">* {{$message}}</small>
+                    @enderror
                 </div>
                 <div class="my-px">
                     <label for="description">Descripción:</label><br />
-                    <textarea name="description" rows="5" class="border border-black">{{$curso->description}}</textarea>
+                    <textarea name="description" rows="5" class="border border-black">{{old('description', $curso->description)}}</textarea>
+                    @error('description')
+                        <small class="text-red-400">* {{$message}}</small>
+                    @enderror
                 </div>
                 <div class="my-px">
                     <label for="categoria">Categoría:</label><br />
-                    <input type="text" name="categoria" class="border border-black" value="{{$curso->categoria}}" />
+                    <input type="text" name="categoria" class="border border-black" value="{{old('categoria', $curso->categoria)}}" />
+                    @error('categoria')
+                        <small class="text-red-400">* {{$message}}</small>
+                    @enderror
                 </div>
                 <div class="my-px">
                     <button type="submit" class="border border-black">Actualizar</button>

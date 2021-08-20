@@ -21,6 +21,11 @@ class CursoController extends Controller
     //Por convencion, para guardar entradas
     public function store(Request $request){
         //return $request->all();
+        $request->validate([
+            'name' => 'required|max:10',
+            'description' => 'required|min:10',
+            'categoria' => 'required'
+        ]);
         $curso = new Curso();
         $curso->name = $request->name;
         $curso->description = $request->description;
@@ -46,6 +51,11 @@ class CursoController extends Controller
 
     //Por convencion, para guardar entradas
     public function update(Request $request, Curso $curso){
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'categoria' => 'required'
+        ]);
         $curso->name = $request->name;
         $curso->description = $request->description;
         $curso->categoria = $request->categoria;
