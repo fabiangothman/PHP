@@ -10,8 +10,8 @@
                 <script>//alert("{{session('info')}}");</script>
                 <!--<x-alert color="yellow" title="Éxito" text="Mensaje enviado con éxito" />-->
                 <x-alert color="green">
-                    <x-slot name="title">Precaución</x-slot>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptate modi, velit iusto eius aliquid. Assumenda tempore accusamus, similique officiis alias nisi repellendus praesentium nobis fugit, exercitationem quis voluptatem inventore!
+                    <x-slot name="title">Éxito</x-slot>
+                    Mensaje enviado con éxito
                 </x-alert>
             @endif
 

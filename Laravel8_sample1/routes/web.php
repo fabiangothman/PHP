@@ -59,3 +59,13 @@ Route::view('nosotros', 'us')->name('nosotros');
 });*/
 Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
 Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
+
+Route::get('pruebaMiddleware', function () {
+    return "Has accedido correctamente";
+})->middleware(['auth', 'age']);
+Route::get('no-autorizado', function () {
+    return "Usted no está autorizado para estar aquí";
+});
+Route::get('login', function () {
+    return "Iniciar sesión";
+})->name('login');

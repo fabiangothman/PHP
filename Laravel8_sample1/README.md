@@ -50,6 +50,10 @@ Check the terminal snippets list
 - Create new component (creates two files for component: controller&view):
     - php artisan make:component Name
     - p.e. <x-alert />
+### Terminal middleware
+- Create new middleware:
+    - php artisan make:middleware Name
+- Register middleware into Kernel.php
 
 ## ORM Eloquent
 Eloquent manages all database injection/consulting by using objects.
