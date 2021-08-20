@@ -34,7 +34,7 @@ Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
 });*/
 
 //Busca el metodo __invoke en el controller
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 /*Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 Route::get('cursos/create', [CursoController::class, 'create'])->name('cursos.create');
@@ -47,3 +47,5 @@ Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('curs
 //Se crean ResourceVerbs para cambiar los nombres en las URL (AppServiceProvider.php o también en RouteServiceProvider.php)
 Route::resource('cursos', CursoController::class);
 //Route::resource('materias', CursoController::class)->parameters(['materias' => 'curso'])->names('cursos');
+
+Route::view('nosotros', 'us')->name('nosotros');
