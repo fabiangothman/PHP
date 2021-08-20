@@ -28,11 +28,22 @@ class CursoController extends Controller
         ]);*/
         
         //return $request->all();
-        $curso = new Curso();
+
+        /*$curso = new Curso();
         $curso->name = $request->name;
         $curso->description = $request->description;
         $curso->categoria = $request->categoria;
-        $curso->save();
+        $curso->save();*/
+
+        /*$curso = Curso::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'categoria' => $request->categoria
+        ]);*/
+
+        //Mass assignment   /   Asignación masiva
+        $curso = Curso::create($request->all());
+
         return redirect()->route('cursos.show', $curso);
     }
 
@@ -58,10 +69,20 @@ class CursoController extends Controller
             'description' => 'required',
             'categoria' => 'required'
         ]);
-        $curso->name = $request->name;
+        /*$curso->name = $request->name;
         $curso->description = $request->description;
         $curso->categoria = $request->categoria;
-        $curso->save();
+        $curso->save();*/
+
+        //Mass assignment   /   Asignación masiva
+        $curso = Curso::create($request->all());
+
         return redirect()->route('cursos.show', $curso);
+    }
+
+    //Por convencion, para guardar entradas
+    public function destroy(Curso $curso){
+        $curso->delete();
+        return redirect()->route('cursos.index');
     }
 }

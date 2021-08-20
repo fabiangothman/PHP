@@ -42,3 +42,4 @@ Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');
 Route::get('cursos/{curso}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
 Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('cursos.update');
 Route::get('cursos/{curso}/{categoria?}', [CursoController::class, 'show'])->name('cursos.show');
+Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('cursos.destroy');

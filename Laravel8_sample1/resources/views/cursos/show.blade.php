@@ -11,6 +11,12 @@
         <div class="m-5">
             <p><strong>Categoria:</strong> {{$curso->categoria}}</p>
             <p>Descripción: {{$curso->description}}</p>
+            <br />
+            <form action="{{route('cursos.destroy', $curso)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="border border-black">Delete course</button>
+            </form>
         </div>
     </div>
 

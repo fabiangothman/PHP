@@ -9,6 +9,8 @@
         <div class="m-5">
             <form action="{{route('cursos.store')}}" method="POST">
                 @csrf
+                @method('POST')
+                
                 <div class="my-px">
                     <label for="name">Nombre:</label><br />
                     <input type="text" name="name" class="border border-black" value="{{old('name')}}" />
