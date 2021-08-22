@@ -40,4 +40,14 @@ class Post extends Model
         //return $this->belongsTo(Category::class, 'category_id', 'id');
         return $this->belongsTo(Category::class);
     }
+
+    /**
+     * Relación 1:1 polimórfica
+     * Obtener la propiedad via:
+     *      $profile = Profile::find(1);
+     *      $profile->user;
+     */
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }

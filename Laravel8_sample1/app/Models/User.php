@@ -105,4 +105,14 @@ class User extends Authenticatable
         //return $this->belongsToMany('App\Models\Role');
         return $this->belongsToMany(Role::class);
     }
+
+    /**
+     * Relación 1:1 polimórfica
+     * Obtener la propiedad via:
+     *      $user = User::find(1);
+     *      $user->image;
+     */
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }
