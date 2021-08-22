@@ -90,4 +90,19 @@ class User extends Authenticatable
         //return $this->hasMany(Video::class, 'user_id', 'id');
         return $this->hasMany(Video::class);
     }
+
+    /**
+     * El metodo asume que las foranea se llaman "role_id" y "user_id" y que la en cada una es "id"
+     * Relación m:m
+     * Obtener la propiedad y agregar rol via:
+     *      $user = User::find(1);
+     *      $user->roles()->attach([1, 2]);     //Agrega items a la relacion m:m
+     *      $user->roles()->sync([2, 3]);       //Remplaza items a la relacion m:m
+     *      $user->roles()->detach([2]);        //Elimina items de la relacion m:m
+     *      $user->roles;
+     */
+    public function roles(){
+        //return $this->belongsToMany('App\Models\Role');
+        return $this->belongsToMany(Role::class);
+    }
 }
