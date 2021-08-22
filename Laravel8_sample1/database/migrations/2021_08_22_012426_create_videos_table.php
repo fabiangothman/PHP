@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilesTable extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 45);
-            $table->text('biography');
-            $table->string('website', 45)->nullable();
-            $table->unsignedBigInteger('user_id')->unique();    // "unique" because of 1:1 relation
+            $table->string('name', 45);
+            $table->string('description');
+            $table->string('url', 45) ;
+            $table->unsignedBigInteger('user_id')->nullable();    // NOT "unique" because of 1:m relation
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
             $table->timestamps();
         });
@@ -35,6 +35,6 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('videos');
     }
 }

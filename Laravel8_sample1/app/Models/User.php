@@ -56,4 +56,38 @@ class User extends Authenticatable
         //return $this->hasOne(Profile::class, 'user_id', 'id');
         return $this->hasOne(Profile::class);
     }
+
+    /**
+     * El metodo asume que la foranea se llama "user_id" y que la id del post es "id"
+     * Relación 1:m
+     * Obtener la propiedad via:
+     *      $user = User::find(1);
+     *      $user->posts;
+     *      $user->posts[0]->category;
+     */
+    public function posts(){
+        /*$posts = Post::where('user_id', $this->id);
+        return $posts;*/
+
+        //return $this->hasMany('App\Models\Post', 'user_id', 'id');
+        //return $this->hasMany(Post::class, 'user_id', 'id');
+        return $this->hasMany(Post::class);
+    }
+
+    /**
+     * El metodo asume que la foranea se llama "user_id" y que la id del video es "id"
+     * Relación 1:m
+     * Obtener la propiedad via:
+     *      $user = User::find(1);
+     *      $user->posts;
+     *      $user->posts[0]->category;
+     */
+    public function videos(){
+        /*$videos = Video::where('user_id', $this->id);
+        return $videos;*/
+
+        //return $this->hasMany('App\Models\Video', 'user_id', 'id');
+        //return $this->hasMany(Video::class, 'user_id', 'id');
+        return $this->hasMany(Video::class);
+    }
 }

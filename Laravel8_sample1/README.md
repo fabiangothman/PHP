@@ -40,6 +40,16 @@ Check the terminal snippets list
 ### Terminal Models/ORM snippets
 - Create new model (Singular, automatically undestands the plural, only works automatically on English)
     - php artisan make:model Name
+- Create model with migration included:
+    - php artisan make:model Name -m
+- Create model with migration/controller included:
+    - php artisan make:model Name -mc
+- Create model with migration/controller/seeder included:
+    - php artisan make:model Name -mcs
+- Create model with migration/controller/seeder/factory included:
+    - php artisan make:model Name -mcsf
+- Create new model with everything included:
+    - php artisan make:model Name -a
 ### Terminal routes
 - List of current routes:
     - php artisan r:l
