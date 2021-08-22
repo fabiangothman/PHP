@@ -40,4 +40,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * El metodo asume que la foranea se llama "user_id" y que la id del profile es "id"
+     * Relación 1:1
+     * Obtener la propiedad via:
+     *      $user = User::find(1);
+     *      $user->profile;
+     */
+    public function profile(){
+        /*$profile = Profile::where('user_id', $this->id)->first();
+        return $profile;*/
+
+        //return $this->hasOne('App\Models\Profile', 'user_id', 'id');
+        //return $this->hasOne(Profile::class, 'user_id', 'id');
+        return $this->hasOne(Profile::class);
+    }
 }
