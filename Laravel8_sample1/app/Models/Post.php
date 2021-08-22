@@ -25,6 +25,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+
     /**
      * El metodo asume que la foranea se llama "category_id" y que la id del user es "id"
      * Relación 1:m
@@ -41,13 +42,27 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
+
     /**
      * Relación 1:1 polimórfica
      * Obtener la propiedad via:
-     *      $profile = Profile::find(1);
-     *      $profile->user;
+     *      $user = User::find(1);
+     *      $user->image;
+     *      $user->image()->create(['url'=>'url_2']);   //Crea registro desde User (automatically)
      */
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+
+    /**
+     * Relación 1:m polimórfica
+     * Obtener la propiedad via:
+     *      $post = Post::find(1);
+     *      $post->comments;
+     *      $post->comments()->create(['message'=>'message_from_post_1', 'user_id'=>1]);   //Crea registro desde Post (automatically)
+     */
+    public function comments(){
+        return $this->morphMany(Comment::class, 'commentable');
     }
 }

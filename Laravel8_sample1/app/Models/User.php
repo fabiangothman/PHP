@@ -115,4 +115,20 @@ class User extends Authenticatable
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    /**
+     * El metodo asume que la foranea se llama "user_id" y que la id del comment es "id"
+     * Relación 1:m
+     * Obtener la propiedad via:
+     *      $user = User::find(1);
+     *      $user->comments;
+     */
+    public function comments(){
+        /*$videos = Video::where('user_id', $this->id);
+        return $videos;*/
+
+        //return $this->hasMany('App\Models\Comment', 'user_id', 'id');
+        //return $this->hasMany(Comment::class, 'user_id', 'id');
+        return $this->hasMany(Comment::class);
+    }
 }

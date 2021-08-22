@@ -12,9 +12,8 @@ class Image extends Model
     use HasFactory;
 
     /**
-     * El metodo asume que la foranea se llama "user_id" y que la id del user es "id"
      * Relación 1:1
-     * Obtener la propiedad via:
+     * Obtener la propiedad via (Puede ser $post o $user):
      *      $user = User::find(1);
      *      $user->image;
      *      $user->image()->create(['url'=>'url_2']);   //Crea registro desde User (automatically)
