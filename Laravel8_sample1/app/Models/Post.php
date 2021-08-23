@@ -71,7 +71,7 @@ class Post extends Model
      * Obtener la propiedad via:
      *      $post = Post::find(1);
      *      $post->tags;
-     *      $post->tags()->create(['name'=>'new_tag_from_post']);   //Crea nuevo Tag y Taggeable desde Post (automatically)
+     *      $post->tags()->create(['name'=>'new_tag_from_post']);   //Crea nuevo Tag y Taggeable asociado desde Post (automatically)
      */
     public function tags(){
         return $this->morphToMany(Tag::class, 'taggable');

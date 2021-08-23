@@ -43,7 +43,7 @@ class Video extends Model
      * Obtener la propiedad via:
      *      $video = Video::find(1);
      *      $video->tags;
-     *      $video->tags()->create(['name'=>'new_tag_from_video']);   //Crea nuevo Tag y Taggeable desde Video (automatically)
+     *      $video->tags()->create(['name'=>'new_tag_from_video']);   //Crea nuevo Tag y Taggeable asociado desde Video (automatically)
      */
     public function tags(){
         return $this->morphToMany(Tag::class, 'taggable');
