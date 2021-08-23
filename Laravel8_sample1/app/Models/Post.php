@@ -65,4 +65,15 @@ class Post extends Model
     public function comments(){
         return $this->morphMany(Comment::class, 'commentable');
     }
+
+    /**
+     * Relación m:m polimórfica
+     * Obtener la propiedad via:
+     *      $post = Post::find(1);
+     *      $post->tags;
+     *      $post->tags()->create(['name'=>'new_tag_from_post']);   //Crea nuevo Tag y Taggeable desde Post (automatically)
+     */
+    public function tags(){
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
 }

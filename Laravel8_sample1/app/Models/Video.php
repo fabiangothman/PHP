@@ -25,6 +25,7 @@ class Video extends Model
         return $this->belongsTo(User::class);
     }
 
+
     /**
      * Relación 1:m polimórfica
      * Obtener la propiedad via:
@@ -34,5 +35,17 @@ class Video extends Model
      */
     public function comments(){
         return $this->morphMany(Comment::class, 'commentable');
+    }
+
+
+    /**
+     * Relación m:m polimórfica
+     * Obtener la propiedad via:
+     *      $video = Video::find(1);
+     *      $video->tags;
+     *      $video->tags()->create(['name'=>'new_tag_from_video']);   //Crea nuevo Tag y Taggeable desde Video (automatically)
+     */
+    public function tags(){
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 }
