@@ -38,7 +38,8 @@ Hello, this project contains an API built based on Laravel8 to manage the main s
             127.0.0.1	restaurant-api.test
             ```
         - You can add as many domains as you want.
-- The next step is to configure our .env in the project's root with the proper database information, look at the folowing example:
+- The next step is to configure our .env in the project's root. So copy the .env.example and create a new file with the name ".env".
+- Fill the new .env file with your proper database information, look at the following example:
     - ```bash
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1
