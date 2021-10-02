@@ -12,7 +12,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(int $order_id)
+    public function index($order_id)
     {
         $order = Order::find($order_id);
         if($order)
@@ -29,13 +29,12 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        return response('done');
-        /*try {
+        try {
             $order = Order::create($request->all());
             return $this->orderResponseSuccess($order);
         } catch (\Exception $e) {
             return $this->orderResponseFail($e->getMessage(), 500);
-        }*/
+        }
     }
 
     /**
@@ -47,7 +46,20 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::find($id);
+        if($order){
+            $order->name = $request->name;
+            $order->order = $request->order;
+        }else{
+            return $this->orderResponseFail("Can't find the id $id", 404);
+        }
+        
+        try {
+            $order->update();
+            return $this->orderResponseSuccess($order);
+        } catch (\Exception $e) {
+            return $this->orderResponseFail($e->getMessage(), 500);
+        }
     }
 
     /**
@@ -58,7 +70,17 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        if($order){
+            try{
+                $order->delete();
+                return $this->orderResponseSuccess($order);
+            } catch (\Exception $e) {
+                return $this->orderResponseFail($e->getMessage(), 500);
+            }
+        }else{
+            return $this->orderResponseFail("Can't find the id $id", 404);
+        }
     }
 
     private function orderResponseSuccess(Order $order){

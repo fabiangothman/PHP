@@ -61,6 +61,60 @@ Hello, this project contains an API built based on Laravel8 to manage the main s
             ```
 - Once done, finally type http://restaurant-api.test on your browser to access to the API.
 
+<br />
+<br />
+
 ## Endpoints
 The following is the basic endpoints list for the restaurant API:
-- 
+- Get order:
+    - Method: GET
+    - Body: Not required
+    - URL: http://restaurant-api.test/orden/{orden_id}
+        - Example: http://restaurant-api.test/orden/1
+    - Return: Order object required (or error).
+- Create order:
+    - Method: POST
+    - Body:
+        - Type: JSON
+        - ```javascript
+            {
+                "name": "Fabian Murillo",
+                "order": "Quiero una pasta bolognesa con una cerveza corona."
+            }
+            ```
+        - Fields manatories
+    - URL: http://restaurant-api.test/orden
+    - Return: Order object created (or error).
+- Update order:
+    - Method: PUT
+    - Body:
+        - Type: JSON
+        - ```javascript
+            {
+                "name": "Fabian Murillo",
+                "order": "Quiero actualizar a una pasta bolognesa con una cerveza corona."
+            }
+            ```
+        - Fields manatories
+    - URL: http://restaurant-api.test/orden/{orden_id}
+        - Example: http://restaurant-api.test/orden/41
+    - Return: Order object updated (or error).
+- Update order:
+    - Method: DELETE
+    - Body: Not required
+    - URL: http://restaurant-api.test/orden/{orden_id}
+        - Example: http://restaurant-api.test/orden/41
+    - Return: Order object deleted (or error).
+- Pay order (create Invoice):
+    - Method: POST
+    - Body:
+        - Type: JSON
+        - ```javascript
+            {
+                "order_id": 41,
+                "paid": true
+            }
+            ```
+        - Fields manatories
+    - URL: http://restaurant-api.test/pagar
+    - Return: Order object with invoice "factura" updated (or error).

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,4 @@ Route::get('orden/{order_id}', [OrderController::class, 'index'])->name('order.i
 Route::post('orden', [OrderController::class, 'store'])->name('order.store');
 Route::put('orden/{order_id}', [OrderController::class, 'update'])->name('order.update');
 Route::delete('orden/{order_id}', [OrderController::class, 'destroy'])->name('order.destroy');
+Route::put('pagar/{order_id}', [InvoiceController::class, 'update'])->name('invoice.update');
