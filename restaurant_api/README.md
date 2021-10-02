@@ -31,10 +31,26 @@ Hello, this project contains an API built based on Laravel8 to manage the main s
             </VirtualHost>
             ```
         - Please consider to change the routes to your owns 
+- With this done, we are ready to open our XAMPP control panel (C:\xampp\xampp-control.exe) and start the Apache and MySQL services.
 - Now let's configure the hosts file (C:\Windows\System32\drivers\etc\hosts)
     - Remember to do it with admin rights, add the following line to the end:
         - ```bash
             127.0.0.1	restaurant-api.test
             ```
         - You can add as many domains as you want.
-- Finally type http://restaurant-api.test on your browser to access to the API.
+- The next step is to configure our .env in the project's root with the proper database information, look at the folowing example:
+    - ```bash
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=restaurant_api
+        DB_USERNAME=root
+        DB_PASSWORD=
+        ```
+    - Please be sure the database exists with the name you configured. You can always access to the database via http://localhost/phpmyadmin to create the database or manage it.
+- Now run the script to fill the database (migrations) like this:
+    - Open a terminal or CMD and go to the project's path (In my case C:\Users\FABIAN\Documents\Programming\PHP\restaurant_api) and run the following command:
+        - ```bash
+            php artisan migrate:fresh --seed
+            ```
+- Once done, finally type http://restaurant-api.test on your browser to access to the API.
