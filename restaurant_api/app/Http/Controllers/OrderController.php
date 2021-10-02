@@ -50,6 +50,7 @@ class OrderController extends Controller
         if($order){
             $order->name = $request->name;
             $order->order = $request->order;
+            $order->price = $request->price;
         }else{
             return $this->orderResponseFail("Can't find the id $id", 404);
         }
@@ -88,6 +89,7 @@ class OrderController extends Controller
             'id' => $order->id,
             'name' => $order->name,
             'order' => $order->order,
+            'price' => $order->price,
             'created_at' => $order->created_at,
             'updated_at' => $order->updated_at,
             'factura' => $order->invoice

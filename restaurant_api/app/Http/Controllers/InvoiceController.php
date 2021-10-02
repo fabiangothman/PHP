@@ -37,6 +37,7 @@ class InvoiceController extends Controller
             'id' => $order->id,
             'name' => $order->name,
             'order' => $order->order,
+            'price' => $order->price,
             'created_at' => $order->created_at,
             'updated_at' => $order->updated_at,
             'factura' => $order->invoice

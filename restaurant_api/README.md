@@ -80,7 +80,8 @@ The following is the basic endpoints list for the restaurant API:
         - ```javascript
             {
                 "name": "Fabian Murillo",
-                "order": "Quiero una pasta bolognesa con una cerveza corona."
+                "order": "Quiero una pasta bolognesa con una cerveza corona.",
+                "price": 125000
             }
             ```
         - Fields manatories
@@ -94,6 +95,7 @@ The following is the basic endpoints list for the restaurant API:
             {
                 "name": "Fabian Murillo",
                 "order": "Quiero actualizar a una pasta bolognesa con una cerveza corona."
+                "price": 50000
             }
             ```
         - Fields manatories
@@ -112,10 +114,10 @@ The following is the basic endpoints list for the restaurant API:
         - Type: JSON
         - ```javascript
             {
-                "order_id": 41,
                 "paid": true
             }
             ```
         - Fields manatories
-    - URL: http://restaurant-api.test/pagar
+    - URL: http://restaurant-api.test/orden/{orden_id}
+        - Example: http://restaurant-api.test/orden/41
     - Return: Order object with invoice "factura" updated (or error).
