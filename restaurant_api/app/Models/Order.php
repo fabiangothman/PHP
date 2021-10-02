@@ -10,8 +10,8 @@ class Order extends Model
     use HasFactory;
 
     protected $table = "orders";
-    protected $fillable = ['name', 'order']; //Guarda en el Modelo Curso solo estos campos
-    protected $guarded = [];    //Guarda en el Modelo Curso los campos excepto estos campos
+    protected $fillable = ['name', 'order']; //Guarda en el Modelo Order solo estos campos
+    protected $guarded = [];    //Guarda en el Modelo Order los campos excepto estos campos
     
 
     /**

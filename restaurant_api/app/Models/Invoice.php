@@ -9,6 +9,10 @@ class Invoice extends Model
 {
     use HasFactory;
 
+    protected $table = "invoices";
+    protected $fillable = ['order_id', 'paid']; //Guarda en el Modelo Order solo estos campos
+    protected $guarded = [];    //Guarda en el Modelo Order los campos excepto estos campos
+
     
     /**
      * El metodo asume que la foranea se llama "order_id" y que la id del order es "id"

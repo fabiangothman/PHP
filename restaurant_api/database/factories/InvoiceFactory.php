@@ -24,7 +24,7 @@ class InvoiceFactory extends Factory
     {
         return [
             'order_id' => $this->faker->unique()->randomElement(Order::pluck('id', 'id')->toArray()),
-            'paid' => $this->faker->randomElement([0, 1]),
+            'paid' => $this->faker->randomElement([false, true]),
             'created_at' => $this->faker->date('Y-m-d H:i:s')
         ];
     }

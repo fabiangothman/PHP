@@ -1,5 +1,5 @@
 # Restaurant API
-Hello, this project contains an API built based on Laravel8 to manage the main services in a restaurant. This is a test app so we're going to use it like a small personal computer located app.
+Hello, this project contains an API built based on Laravel8 to manage the main services in a restaurant. This is a test app so we're going to use it like a small personal windows-computer located app.
 
 ## First steps
 - We need to setup a local environment to run this app, so to make it faster, let's install the PHP8 XAMPP version.
@@ -48,10 +48,19 @@ Hello, this project contains an API built based on Laravel8 to manage the main s
         DB_PASSWORD=
         ```
     - Please be sure the database exists with the name you configured. You can always access to the database via http://localhost/phpmyadmin to create the database or manage it.
+- Now run the script to download the needed Laravel's libraries:
+    - Open a terminal or CMD and go to the project's path (In my case C:\Users\FABIAN\Documents\Programming\PHP\restaurant_api) and run the following command:
+        - ```bash
+            composer install
+            ```
+    - This is going to create the database model and fill it with demo data.
 - Now run the script to fill the database (migrations) like this:
     - Open a terminal or CMD and go to the project's path (In my case C:\Users\FABIAN\Documents\Programming\PHP\restaurant_api) and run the following command:
         - ```bash
             php artisan migrate:fresh --seed
             ```
-    - This is going to create the database model and fill it with demo data.
 - Once done, finally type http://restaurant-api.test on your browser to access to the API.
+
+## Endpoints
+The following is the basic endpoints list for the restaurant API:
+- 

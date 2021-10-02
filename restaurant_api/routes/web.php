@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('orden', function () {
-    return 'welcome';
+    return json_encode('Not found');
 });
-Route::get('orden/{orden}', [OrderController::class, 'index'])->name('orden.index');
-Route::post('orden', [OrderController::class, 'store'])->name('orden.store');
-Route::put('orden/{orden}', [OrderController::class, 'update'])->name('orden.update');
-Route::delete('orden/{orden}', [OrderController::class, 'destroy'])->name('orden.destroy');
+Route::get('orden/{order_id}', [OrderController::class, 'index'])->name('order.index');
+Route::post('orden', [OrderController::class, 'store'])->name('order.store');
+Route::put('orden/{order_id}', [OrderController::class, 'update'])->name('order.update');
+Route::delete('orden/{order_id}', [OrderController::class, 'destroy'])->name('order.destroy');
