@@ -102,7 +102,7 @@ The following is the basic endpoints list for the restaurant API:
     - URL: http://restaurant-api.test/orden/{orden_id}
         - Example: http://restaurant-api.test/orden/41
     - Return: Order object updated (or error).
-- Update order:
+- Cancel order:
     - Method: DELETE
     - Body: Not required
     - URL: http://restaurant-api.test/orden/{orden_id}
