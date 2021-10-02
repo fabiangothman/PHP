@@ -53,4 +53,5 @@ Hello, this project contains an API built based on Laravel8 to manage the main s
         - ```bash
             php artisan migrate:fresh --seed
             ```
+    - This is going to create the database model and fill it with demo data.
 - Once done, finally type http://restaurant-api.test on your browser to access to the API.

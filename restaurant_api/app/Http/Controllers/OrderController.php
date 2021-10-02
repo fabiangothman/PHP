@@ -14,7 +14,10 @@ class OrderController extends Controller
      */
     public function index(Order $orden)
     {
-        return response($orden, 200)->header('Content-Type', 'application/json');
+        return response(json_encode([
+            'orden' => $orden,
+            'factura' => $orden->invoice
+        ]), 200)->header('Content-Type', 'application/json');
     }
 
     /**
