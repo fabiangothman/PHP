@@ -66,7 +66,7 @@ Hello, this project contains an API built based on Laravel8 to manage the main s
 <br />
 
 ## Endpoints
-The following is the basic endpoints list for the restaurant API:
+The following is the basic endpoints list for the restaurant API, you can get more details on https://documenter.getpostman.com/view/13736721/UUy39SPJ
 - Get order:
     - Method: GET
     - Body: Not required
